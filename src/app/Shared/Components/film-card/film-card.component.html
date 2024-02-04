@@ -1,0 +1,27 @@
+<div *ngIf="type == 'movie'; then movieDetails else tvSeriesDetails"></div>
+<ng-template #tvSeriesDetails>
+    <div *ngFor="let i of tvShows" id="{{i.id}}" class="section2__tvBlock" (click)="goToTvSeriesDetails(i.id)"
+        style="background-image: url({{imgSrc}}{{i.poster_path}})">
+        <div class="tvBlock__info">
+            <div class="tvBlock__name">
+                {{i.name || i.title}}
+            </div>
+            <div *ngIf="i.vote_average != 0" class="tvBlock__rate">
+                {{ i.vote_average | round: 1 }}
+            </div>
+        </div>
+    </div>
+</ng-template>
+<ng-template #movieDetails>
+    <div *ngFor="let i of tvShows" id="{{i.id}}" class="section2__tvBlock" (click)="goToMovieDetails(i.id)"
+    style="background-image: url({{imgSrc}}{{i.poster_path}})">
+    <div class="tvBlock__info">
+        <div class="tvBlock__name">
+            {{i.name || i.title}}
+        </div>
+        <div *ngIf="i.vote_average != 0" class="tvBlock__rate">
+            {{ i.vote_average | round: 1 }}
+        </div>
+    </div>
+</div>
+</ng-template>

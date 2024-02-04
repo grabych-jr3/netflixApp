@@ -1,0 +1,19 @@
+<div class="search__content">
+    <div class="container-fluid">
+        <form class="searchForm" [formGroup]="searchGroup" (ngSubmit)="submitForm()">
+            <input type="text" placeholder="Search.." name="search" id="searchField" formControlName="searchField">
+            <button type="submit" [disabled]="!searchGroup.valid"><i class="fa fa-search"></i></button>
+        </form>
+        
+        <section class="section1 section" *ngIf="status">
+            <div class="container-fluid">
+                <div class="section1__films">
+                    <ng-container *ngFor="let i of filmsArr; let idx = index">
+                        <app-film-card *ngIf="idx == 0" [tvShows]="filmsArr" [imgSrc]="imgSrc" [type]="i.media_type" ngClass="section1__movieList"></app-film-card>
+                    </ng-container>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+

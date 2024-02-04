@@ -1,0 +1,23 @@
+<section class="main__section2 section">
+    <div class="container-fluid">
+        <div class="section2__content">
+            <div class="section2__logo">
+                <h1>Trending TV</h1>
+                <div class="section2__arrow-right"></div>
+            </div>
+
+            <div class="section2__slideshow">
+                <div class="arrow-left arrow" (click)="prevListener()"></div>
+                <div class="section2__carousel">
+                    
+                    <div class="section2__trendingTvShows" #gallery>
+                        <app-film-card [tvShows]="tvShows" [imgSrc]="imgSrc" [type]="'tv'" style="display: flex;"></app-film-card>
+                    </div>
+                    
+                </div>
+                <div class="arrow-right arrow" (click)="nextListener()"></div>
+            </div>
+
+        </div>
+    </div>
+</section>

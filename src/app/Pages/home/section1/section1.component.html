@@ -1,0 +1,57 @@
+<section class="section1 section">
+    <ngb-carousel>
+        <ng-template ngbSlide *ngFor="let i of arr" class="section1__preview">
+                <div class="showBlock"
+                    style="background-image: url({{imgSrc}}{{i.backdrop_path}});">
+                    <div class="container-fluid">
+                        <div class="section1__content">
+                            <div class="section1__film-description">
+                                
+                                <div class="film-description__section1">
+                                    <div class="logo">
+                                        <img src="/assets/images/icons/Netflix_Symbol_RGB 1.svg" alt="N">
+                                    </div>
+                                    <div class="movie-type">{{i.media_type}}</div>
+                                </div>
+                                <div class="film-description__section2">
+                                    <div class="film-description__title">
+                                        <h1>{{i.name || i.title}}</h1>
+                                    </div>
+                                    <div class="film-description__overview">
+                                        {{i.overview | slice: 0:200}}...
+                                    </div>
+                                    <div class="film-description__buttons">
+                                        <div class="play-button button">
+                                            <a href="#">Play</a>
+                                        </div>
+                                        <div *ngIf="i.media_type == 'movie'; then movieDetails else tvSeriesDetails"></div>
+                                        <ng-template #movieDetails>
+                                            <div class="info-button button" (click)="goToMovieDetails(i.id)">
+                                                <a>More info</a>
+                                            </div>
+                                        </ng-template>
+                                        <ng-template #tvSeriesDetails>
+                                            <div class="info-button button" (click)="goToTvSeriesDetails(i.id)">
+                                                <a>More info</a>
+                                            </div>
+                                        </ng-template>
+                                    </div>
+                                </div>
+                                <div class="circle-decorations1 circle-decorations"></div>
+                                <div class="circle-decorations2 circle-decorations"></div>
+                                <div class="circle-decorations3 circle-decorations"></div>
+                                <div class="circle-decorations4 circle-decorations"></div>
+                                <div class="circle-decorations5 circle-decorations"></div>
+                            </div>
+
+                            <div class="section1__film-overview">
+                                <p>
+                                    {{i.overview}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </ng-template>
+    </ngb-carousel>
+</section>

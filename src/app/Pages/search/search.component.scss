@@ -1,0 +1,53 @@
+.search__content{
+    padding-top: 80px;
+}
+
+.searchForm {
+    margin-bottom: 30px;
+    input[type="text"] {
+        padding: 10px;
+        font-size: 17px;
+        border: 1px solid grey;
+        float: left;
+        width: 80%;
+        height: 40px;
+        background: #f1f1f1;
+    }
+    button {
+        float: left;
+        width: 20%;
+        padding: 10px;
+        height: 40px;
+        background: #ff0000;
+        color: white;
+        font-size: 17px;
+        // border: 1px solid grey;
+        border-left: none;
+        transition-duration: 0.3s;
+        cursor: pointer;
+        &:hover {
+            background: #b40505;
+        }
+    }
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+.section1 {
+    // position: absolute;
+    // left: 0;
+    // top: 60px;
+    
+    &__films {
+        // padding-top: 30px;
+    }
+    &__movieList {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}

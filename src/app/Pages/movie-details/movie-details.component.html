@@ -1,0 +1,26 @@
+<section class="section1 section">
+    <div *ngIf="arr" class="section1__showBlock" style="background-image: url({{imgSrc}}{{arr.backdrop_path}})">
+        <div class="container-fluid">
+            <div class="section1__content">
+                <div class="section1__filmInfo">
+                    <div class="filmInfo__title">
+                        <img src="../../../assets/images/icons/Netflix_Symbol_RGB 1.svg" alt="N">
+                        <h1>{{arr.title}}</h1>
+                    </div>
+                    <div class="filmInfo__overview">
+                        <p>{{arr.overview}}</p>
+                    </div>
+                    <div class="filmInfo__status">
+                        <p>Status: {{arr.status}}</p>
+                    </div>
+                    <div class="filmInfo__releaseDate">
+                        <p>Release date: {{arr.release_date}}</p>
+                    </div>
+                    <div *ngIf="arr.vote_average != 0" class="filmInfo__rating">
+                        <p>IMDB rating: {{arr.vote_average | round: 1}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

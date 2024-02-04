@@ -1,0 +1,29 @@
+<header class="header">
+    <div class="container-fluid">
+        <div class="header__content">
+            <nav class="header__navbar">
+                <div class="header__logo">
+                    <img src="../assets/images/icons/Logo.svg" alt="Netflix">
+                </div>
+                <div class="header__menu">
+                    <div class="menu__item"><a routerLink="">Home</a></div>
+                    <div class="menu__item"><a routerLink="/tvShows">TV Shovs</a></div>
+                    <div class="menu__item"><a routerLink="/movies">Movies</a></div>
+                </div>
+            </nav>
+            <!-- Search -->
+            <div class="header__buttons">
+                <div class="searchButton" (click)="goToSearch()">
+                    <h1>SEARCH</h1>
+                </div>
+                <div (click)="goToSignIn()">
+                    <h1>Sign In</h1>
+                </div>
+                <div (click)="goToSignUp()">
+                    <h1>Sign Up</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- <router-outlet></router-outlet> -->
