@@ -24,4 +24,7 @@ export class FilmCardComponent implements OnInit{
     this.movie.setMovieId(id);
     this.router.navigate(['movies', id])
   }
+  isNumber(value: any)  : value is Number {
+    return typeof value === 'number';
+  }
 }
